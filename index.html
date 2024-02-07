@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <title>Talkie</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>Text To Speech</header>
+      <form action="#">
+        <div class="row">
+          <label>Enter Text</label>
+          <textarea class="textarea" id="textarea"></textarea>
+        </div>
+        <div class="row">
+          <label>Select Voice</label>
+          <div class="outer">
+            <select class="voice-list" id="voice-options">
+              <!-- 
+               <option value="">Google US English en-US</option>
+              <option value="">Google UK English Female en-GB</option>
+           -->
+            </select>
+          </div>
+        </div>
+        <button class="btn" id="speech-btn">Convert To Speech</button>
+      </form>
+    </div>
+    <script src="/src/js/script.js"></script>
+  </body>
+</html>
