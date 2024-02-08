@@ -1,6 +1,7 @@
 'use strict';
 
-const textArea = document.querySelector('#textarea');
+// VARIABLES
+const textAreaTextToSpeech = document.querySelector('#textarea-text-to-speech');
 const voiceOptions = document.querySelector('#voice-options');
 const speechBtn = document.querySelector('#speech-btn');
 
@@ -49,10 +50,52 @@ const textToSpeech = function (text) {
 speechBtn.addEventListener('click', function (e) {
   e.preventDefault();
 
-  if (textArea.value !== '') {
+  if (textAreaTextToSpeech.value !== '') {
     // Avoiding multiple same text-to-speech on multiple continous click on speech button
     if (!speechSynthesis.speaking) {
-      textToSpeech(textArea.value);
+      textToSpeech(textAreaTextToSpeech.value);
     }
   }
+});
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+// SPEECH TO TEXT
+
+// VARIABLES
+const listenBtn = document.querySelector('#listen-btn');
+const stopBtn = document.querySelector('#stop-btn');
+const textAreaSpeechToText = document.querySelector('#textarea-speech-to-text');
+const languageOptions = document.querySelector('#language-options');
+
+// Fetching Speech recognition object
+const SpeechRecognition =
+  window.webkitSpeechRecognition || window.SpeechRecognition;
+const recognition = new SpeechRecognition();
+
+// Changing speech recognition properties
+recognition.continuous = true;
+recognition.interimResults = true;
+recognition.lang = 'en-US';
+
+// Event Listener: Listen Btn
+listenBtn.addEventListener('click', function (e) {
+  e.preventDefault();
+  recognition.start();
+});
+
+// Event Listener: Stop Btn
+stopBtn.addEventListener('click', function (e) {
+  e.preventDefault();
+  recognition.stop();
+});
+
+// Fetching the result when speech recognition is fired
+recognition.addEventListener('result', function (res) {
+  const output = Array.from(res.results[0])
+    .map(r => r.transcript)
+    .join('');
+
+  // Displaying the transcript on the screen
+  textAreaSpeechToText.textContent = output;
 });

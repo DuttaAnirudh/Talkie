@@ -12,7 +12,7 @@
       <form action="#">
         <div class="row">
           <label>Enter Text</label>
-          <textarea class="textarea" id="textarea"></textarea>
+          <textarea class="textarea" id="textarea-text-to-speech"></textarea>
         </div>
         <div class="row">
           <label>Select Voice</label>
@@ -26,6 +26,32 @@
           </div>
         </div>
         <button class="btn" id="speech-btn">Convert To Speech</button>
+      </form>
+    </div>
+    <div class="wrapper">
+      <header>Speech To Text</header>
+      <form action="#">
+        <div class="row">
+          <label>Transcript</label>
+          <textarea class="textarea" id="textarea-speech-to-text"></textarea>
+        </div>
+        <!-- <div class="row">
+          <label>Select Language</label>
+          <div class="outer">
+            <select class="voice-list" id="language-options">
+              <option value="en-US">Google US English (en-US)</option>
+              <option value="en-GB">Google UK English (en-GB)</option>
+              <option value="es-ES">Google español (es-ES)</option>
+              <option value="fr-FR">Google français (fr-FR)</option>
+              <option value="hi-IN">Google हिन्दी (hi-IN)</option>
+              <option value="ja-JP">Google 日本語 (ja-JP)</option>
+              <option value="pt-BR">Google português do Brasil (pt-BR)</option>
+            </select>
+          </div>
+        </div> -->
+
+        <button class="btn" id="listen-btn">Listen</button>
+        <button class="btn" id="stop-btn">Stop</button>
       </form>
     </div>
     <script src="/src/js/script.js"></script>

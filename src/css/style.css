@@ -24,6 +24,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4rem;
   min-height: 100vh;
   background-color: var(--color-primary);
   font-family: "Poppins", sans-serif;
