@@ -13,6 +13,7 @@
   --color-secondary: #675afe;
   --color-tertiary: #4534fe;
   --color-white: #fff;
+  --color-black: #333;
 }
 
 html {
@@ -21,13 +22,11 @@ html {
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4rem;
-  min-height: 100vh;
-  background-color: var(--color-primary);
   font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background-color: var(--color-black);
+  color: var(--color-black);
+  padding: 3rem;
 }
 
 ::selection {
@@ -35,18 +34,83 @@ body {
   background-color: var(--color-primary);
 }
 
+/**************************************/
+/**************************************/
+/* CONTAINER */
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+
+/**************************************/
+/**************************************/
+/* DISPLAY - HIDDEN */
+.hidden {
+  display: none !important;
+}
+
+/**************************************/
+/**************************************/
+/* HEADINGS */
+.heading-1 {
+  color: var(--color-white);
+  font-size: 4rem;
+}
+
+.heading-2 {
+  color: var(--color-white);
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+
+/**************************************/
+/**************************************/
+/* FEATURE SECTION */
+.feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem 0 8rem;
+  gap: 4rem;
+}
+
+.feature__btn-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20rem;
+}
+
+/**************************************/
+/**************************************/
+/* WRAPPER BOX */
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50rem;
   width: 37rem;
   padding: 2.5rem 3rem;
   border-radius: 0.7rem;
   background: var(--color-white);
   box-shadow: 0.7rem 0.7rem 2rem rgba(0, 0, 0, 0.05);
+  margin: 0 auto;
 }
 
 .wrapper header {
   font-size: 2.8rem;
   font-weight: 500;
   text-align: center;
+}
+
+.wrapper__blank {
+  font-size: 15rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-secondary);
 }
 
 .wrapper form {
@@ -68,7 +132,7 @@ form .row:nth-child(2) label {
   font-size: 1.7rem;
 }
 
-form :where(textarea, select, button) {
+form :where(textarea, select) {
   outline: none;
   width: 100%;
   height: 100%;
@@ -117,20 +181,32 @@ form .row select::-webkit-scrollbar-thumb {
   border-right: 0.2rem solid var(--color-white);
 }
 
-form button {
-  height: 5.2rem;
-  color: var(--color-white);
-  font-size: 1.7rem;
-  cursor: pointer;
-  margin-top: 1rem;
-  background: var(--color-secondary);
-  transition: 0.3s ease;
+form .btn {
+  width: 100%;
 }
 
-form button:hover {
+/**************************************/
+/**************************************/
+/* BUTTON */
+.btn {
+  color: var(--color-white);
+  background: var(--color-secondary);
+  font-size: 1.7rem;
+  margin-top: 1rem;
+  padding: 1.5rem 2.5rem;
+  border: none;
+  border-radius: 1.5rem;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
   background: var(--color-tertiary);
 }
 
+/**************************************/
+/**************************************/
+/* MEDIA QUERIES */
 @media (max-width: 40rem) {
   .wrapper {
     max-width: 34.5rem;

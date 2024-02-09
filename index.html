@@ -7,35 +7,54 @@
     <title>Talkie</title>
   </head>
   <body>
-    <div class="wrapper">
-      <header>Text To Speech</header>
-      <form action="#">
-        <div class="row">
-          <label>Enter Text</label>
-          <textarea class="textarea" id="textarea-text-to-speech"></textarea>
+    <div class="container">
+      <!-- HEADER -->
+      <header class="header">
+        <h1 class="heading-1">Talkie.</h1>
+      </header>
+      <!-- FEATURES -->
+      <div class="feature">
+        <h2 class="heading-2">How can I can help you?</h2>
+        <div class="feature__btn-row">
+          <button class="btn btn-feature" id="btn--to-">Text To Speech</button>
+          <button class="btn btn-feature" id="btn--to-">Speech To Text</button>
         </div>
-        <div class="row">
-          <label>Select Voice</label>
-          <div class="outer">
-            <select class="voice-list" id="voice-options">
-              <!-- 
+      </div>
+
+      <!-- TEXT TO SPEECH -->
+      <div class="wrapper wrapper__blank" id="wrapper-blank">&quest;</div>
+
+      <div class="wrapper hidden" id="text-to-speech-box">
+        <header>Text To Speech</header>
+        <form action="#">
+          <div class="row">
+            <label>Enter Text</label>
+            <textarea class="textarea" id="textarea-text-to-speech"></textarea>
+          </div>
+          <div class="row">
+            <label>Select Voice</label>
+            <div class="outer">
+              <select class="voice-list" id="voice-options">
+                <!-- 
                <option value="">Google US English en-US</option>
               <option value="">Google UK English Female en-GB</option>
            -->
-            </select>
+              </select>
+            </div>
           </div>
-        </div>
-        <button class="btn" id="speech-btn">Convert To Speech</button>
-      </form>
-    </div>
-    <div class="wrapper">
-      <header>Speech To Text</header>
-      <form action="#">
-        <div class="row">
-          <label>Transcript</label>
-          <textarea class="textarea" id="textarea-speech-to-text"></textarea>
-        </div>
-        <!-- <div class="row">
+          <button class="btn" id="speech-btn">Convert To Speech</button>
+        </form>
+      </div>
+
+      <!-- SPEECH TO TEXT -->
+      <div class="wrapper hidden" id="speech-to-text-box">
+        <header>Speech To Text</header>
+        <form action="#">
+          <div class="row">
+            <label>Transcript</label>
+            <textarea class="textarea" id="textarea-speech-to-text"></textarea>
+          </div>
+          <!-- <div class="row">
           <label>Select Language</label>
           <div class="outer">
             <select class="voice-list" id="language-options">
@@ -50,9 +69,10 @@
           </div>
         </div> -->
 
-        <button class="btn" id="listen-btn">Listen</button>
-        <button class="btn" id="stop-btn">Stop</button>
-      </form>
+          <button class="btn" id="listen-btn">Start Listening</button>
+          <button class="btn" id="stop-btn">Stop Listening</button>
+        </form>
+      </div>
     </div>
     <script src="/src/js/script.js"></script>
   </body>
