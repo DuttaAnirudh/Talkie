@@ -5,8 +5,21 @@ const textAreaTextToSpeech = document.querySelector('#textarea-text-to-speech');
 const voiceOptions = document.querySelector('#voice-options');
 const speechBtn = document.querySelector('#speech-btn');
 
+const listenBtn = document.querySelector('#listen-btn');
+const stopBtn = document.querySelector('#stop-btn');
+const textAreaSpeechToText = document.querySelector('#textarea-speech-to-text');
+const languageOptions = document.querySelector('#language-options');
+
+const wrapperBlank = document.querySelector('#wrapper-blank');
+const boxTextToSpeech = document.querySelector('#text-to-speech-box');
+const boxSpeechToText = document.querySelector('#speech-to-text-box');
+const btnTextToSpeech = document.querySelector('#btn-text-to-speech');
+const btnSpeechToText = document.querySelector('#btn-speech-to-text');
+
 let voiceList;
 
+///////////////////////////////////////////////////////////////////
+// TEXT TO SPEECH
 // Function to fetch voices
 const fetchVoices = function () {
   // Fetching array of Voices
@@ -59,15 +72,7 @@ speechBtn.addEventListener('click', function (e) {
 });
 
 ///////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////
 // SPEECH TO TEXT
-
-// VARIABLES
-const listenBtn = document.querySelector('#listen-btn');
-const stopBtn = document.querySelector('#stop-btn');
-const textAreaSpeechToText = document.querySelector('#textarea-speech-to-text');
-const languageOptions = document.querySelector('#language-options');
-
 // Fetching Speech recognition object
 const SpeechRecognition =
   window.webkitSpeechRecognition || window.SpeechRecognition;
@@ -98,4 +103,22 @@ recognition.addEventListener('result', function (res) {
 
   // Displaying the transcript on the screen
   textAreaSpeechToText.textContent = output;
+});
+
+///////////////////////////////////////////////////////////////////
+// ON CLICK FEATURE
+// Event Listener: Show Text to Speech Box
+btnTextToSpeech.addEventListener('click', function (e) {
+  e.preventDefault();
+  wrapperBlank.classList.add('hidden');
+  boxSpeechToText.classList.add('hidden');
+  boxTextToSpeech.classList.remove('hidden');
+});
+
+// Event Listener: Show Speech to Text Box
+btnSpeechToText.addEventListener('click', function (e) {
+  e.preventDefault();
+  wrapperBlank.classList.add('hidden');
+  boxTextToSpeech.classList.add('hidden');
+  boxSpeechToText.classList.remove('hidden');
 });
